@@ -14,4 +14,7 @@ class PrimeFactorsSpec extends PropSpec with ShouldMatchers {
   property("Prime Factors for 9") {
     PrimeFactors of 9 should equal(List(3, 3))
   }
+  property("Prime Factors for 3528") {
+    PrimeFactors of 3528 should equal(List(2, 2, 2, 3, 3, 7, 7))
+  }
 }
