@@ -3,7 +3,11 @@ object PrimeFactors {
     if (number == 1) {
       List()
     } else {
-      List(number)
+      if (number % 2 == 0) {
+        List(2) ::: of(number / 2)
+      } else {
+        List(number)
+      }
     }
   }
 }
