@@ -3,12 +3,12 @@ object PrimeFactors {
     def breakdown(number: Int, divisor: Int): List[Int] = {
       if (number == 1) {
         List()
+      } else if (number == divisor) {
+        List(number)
+      } else if (number % divisor == 0) {
+        List(divisor) ::: breakdown(number / divisor, divisor)
       } else {
-        if (number % divisor == 0) {
-          List(divisor) ::: of(number / divisor)
-        } else {
-          List(number)
-        }
+        breakdown(number, divisor + 1)
       }
     }
     breakdown(number, 2)
